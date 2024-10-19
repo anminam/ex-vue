@@ -1,0 +1,21 @@
+<div id="app">
+  <app-header></app-header>
+  <p>{{message}}</p>
+</div>
+
+<script src="../vue.js"></script>
+
+<script>
+  Vue.createApp({
+    data() {
+      return {
+        message: 10,
+      };
+    },
+    components: {
+      'app-header': {
+        template: '<h1>컴포넌트등록</h1>',
+      },
+    },
+  }).mount('#app');
+</script>

@@ -1,0 +1,23 @@
+<script src="../vue.js"></script>
+<div id="app"></div>
+
+<script>
+  const data = {
+    message: 10,
+  };
+
+  function render(sth) {
+    const div = document.querySelector('#app');
+    div.innerHTML = sth;
+  }
+
+  const app = new Proxy(data, {
+    get(target, value) {
+      console.log(target[value]);
+    },
+    set(target, prop, value) {
+      target[prop] = value;
+      render(value);
+    },
+  });
+</script>

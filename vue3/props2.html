@@ -1,0 +1,21 @@
+<div id="app">
+  <app-header v-bind:title="message"></app-header>
+</div>
+
+<script src="../vue.js"></script>
+<script>
+  Vue.createApp({
+    data() {
+      return {
+        message: '이건 넘어온거임',
+      };
+    },
+
+    components: {
+      'app-header': {
+        props: ['title'],
+        template: '<h1>헤더다 - {{title}}<h1>',
+      },
+    },
+  }).mount('#app');
+</script>

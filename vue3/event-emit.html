@@ -1,0 +1,31 @@
+<div id="app">
+  <app-component v-on:error="alertError"></app-component>
+</div>
+
+<script src="../vue.js"></script>
+
+<script>
+  const appComponent = {
+    template: `
+      <button v-on:click="btnClick">에러내기</button>
+    `,
+    methods: {
+      btnClick() {
+        this.$emit('error');
+      },
+    },
+  };
+  Vue.createApp({
+    data() {
+      return {};
+    },
+    components: {
+      'app-component': appComponent,
+    },
+    methods: {
+      alertError() {
+        alert('에러다요');
+      },
+    },
+  }).mount('#app');
+</script>

@@ -1,0 +1,27 @@
+<script src="../vue.js"></script>
+<div id="app">
+  <p>{{count}}</p>
+  <button v-on:click="addCount">+</button>
+  <button v-on:click="minusCount">-</button>
+  <button v-on:mouseover="addCount">+</button>
+  {{msg}}
+</div>
+
+<script>
+  Vue.createApp({
+    data() {
+      return {
+        msg: 'hi',
+        count: 10,
+      };
+    },
+    methods: {
+      addCount() {
+        this.count++;
+      },
+      minusCount() {
+        this.count--;
+      },
+    },
+  }).mount('#app');
+</script>
