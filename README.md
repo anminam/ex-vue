@@ -1,6 +1,6 @@
 # Vue 공식 사이트
 
-https://v3-docs.vuejs-korea.org/guide/introduction.html
+- https://v3-docs.vuejs-korea.org/guide/introduction.html
 
 # 강의
 
@@ -34,3 +34,24 @@ https://joshua1988.github.io/vue-camp/
 Vue 2 공식 문서 - Reactivity In Depth
 Vue 2 공식 문서 - Reactivity In Depth
 Vue 3 공식 문서 - Reactivity 심화
+
+# Vue CLI
+
+- 명령어로 간단하게 설치가능
+- 공식 사이트
+  - https://cli.vuejs.org/
+
+# 컴포지션 API
+
+- https://joshua1988.github.io/vue-camp/reuse/composition.html#%E1%84%8F%E1%85%A5%E1%86%B7%E1%84%91%E1%85%A9%E1%84%8C%E1%85%B5%E1%84%89%E1%85%A7%E1%86%AB-api-%E1%84%80%E1%85%B5%E1%84%8E%E1%85%A9
+
+# 참고
+
+- 프런트엔드 개발자가 알아야하는 HTTP 프로토콜 Part 1
+  - https://joshua1988.github.io/web-development/http-part1/
+- Vue 빌드 도구
+  - https://vite.dev/
+- 웹팩 핸드북
+  - https://joshua1988.github.io/webpack-guide/
+- 타입스크립트 핸드북
+  - https://joshua1988.github.io/ts/
