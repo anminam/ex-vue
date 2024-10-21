@@ -10,7 +10,7 @@
       <span :class="{ textCompleted: item.completed }">
         {{ item.item }}
       </span>
-      <span class="removeBtn" @click="removeTodo(item, index)">
+      <span class="removeBtn" @click="removeTodo(item)">
         <FontAwesomeIcon icon="fa-trash" />
       </span>
     </li>
@@ -21,32 +21,17 @@
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 export default {
-  data() {
-    return {
-      items: [],
-    };
-  },
+  props: ['items'],
   components: {
     FontAwesomeIcon,
   },
   methods: {
-    removeTodo(item, index) {
-      this.items.splice(index, 1);
+    removeTodo(item) {
+      this.$emit('onRemove', item);
     },
     complete(item) {
-      item.completed = !item.completed;
-
-      localStorage.removeItem(item.item);
-      localStorage.setItem(item.item, JSON.stringify(item));
+      this.$emit('onComplete', item);
     },
-  },
-  created() {
-    if (localStorage.length) {
-      for (var i = 0; i < localStorage.length; i++) {
-        const item = localStorage.getItem(localStorage.key(i));
-        this.items.push(JSON.parse(item));
-      }
-    }
   },
 };
 </script>

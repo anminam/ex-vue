@@ -24,11 +24,7 @@ export default {
         return;
       }
 
-      const obj = {
-        completed: false,
-        item: this.newTodoItem,
-      };
-      localStorage.setItem(this.newTodoItem, JSON.stringify(obj));
+      this.$emit('onAdd', this.newTodoItem);
       this.clearInput();
     },
     clearInput() {
