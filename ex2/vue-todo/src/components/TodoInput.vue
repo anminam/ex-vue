@@ -5,19 +5,31 @@
     <span class="addContainer" @click="addTodo">
       <FontAwesomeIcon icon="fa-plus" />
     </span>
+
+    <ModalNormal v-if="isModal" @close="closeModal">
+      <template #header>
+        <h3>경고!</h3>
+      </template>
+      <template #body> 무엇이든 입력하세요 </template>
+      <template #footer> copy light </template>
+    </ModalNormal>
+    <button id="show-modal" @click="showModal">ShowModal</button>
   </div>
 </template>
 
 <script>
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import ModalNormal from './common/ModalNormal.vue';
 
 export default {
   data() {
     return {
       newTodoItem: '',
+      isModal: false,
     };
   },
-  components: { FontAwesomeIcon },
+  props: { show: Boolean },
+  components: { FontAwesomeIcon, ModalNormal },
   methods: {
     addTodo() {
       if (!this.newTodoItem) {
@@ -29,6 +41,12 @@ export default {
     },
     clearInput() {
       this.newTodoItem = '';
+    },
+    closeModal() {
+      this.isModal = false;
+    },
+    showModal() {
+      this.isModal = true;
     },
   },
 };
